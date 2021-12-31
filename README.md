@@ -11,7 +11,7 @@ A sample project for deploying a Fastify app as AWS Lambda
 
 
 ### Intro
-Fastify is getting very popular given is very fast and with an large ecosystem of plugins. So a decided to test how fast is it. Is not much to different than ExpressJs, but it has a couple of nice features.
+Fastify is getting very popular given it is very fast and with an large ecosystem of plugins. So a decided to test how fast is it. Is not much to different than ExpressJs, but it has a couple of nice features.
 
 
 ### Prerequisite
@@ -37,14 +37,14 @@ capabilities = "CAPABILITY_IAM"
 2. Optional call `sam validate` to validate the template  
 3. Local test `sam local invoke` or `sam local start-api`
 4. Finally sent the function to cloud by running: `sam deploy`
-5. To view logs use `sam logs -n HelloWorldFunction --stack-name <stack_app> --tail`
+5. To view logs use `sam logs -n FastifyApp --stack-name <stack_app> --tail`
 
 
 ### Important observations:
 1. Create a S3 Bucket using AWS CLI
 2. and copy the name to `samconfig.toml` file. 
 3. Make sure to replace the account id and region in `samconfig.toml` file.
-4. Remove `aws cloudformation delete-stack --stack-name <stack_app>`
+4. To remove tha app and delete the stack `aws cloudformation delete-stack --stack-name <stack_app>`
 5. To run the image build by sam `docker run -p 9000:8080 helloworldfunction:rapid-1.30.0`
 
 

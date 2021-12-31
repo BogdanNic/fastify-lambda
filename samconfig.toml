@@ -1,0 +1,8 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "fastify-sam-app"
+s3_bucket = "fastify-backend-lambda-bog-1gzhb77lq22yt"
+region = "eu-central-1"
+capabilities = "CAPABILITY_IAM"

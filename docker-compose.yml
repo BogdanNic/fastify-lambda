@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
+    env_file:
+      - .env.docker
+  database:
+    image: "mongo"
+    restart: always
+    container_name: "mongo_db"
+    environment:
+      - MONGO_INITDB_DATABASE=lambda-db
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_COLLECTION=myapp
+    ports:
+      - 27017:27017
